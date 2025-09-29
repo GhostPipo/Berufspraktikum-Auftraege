@@ -4,26 +4,26 @@ namespace DateFormat
 {
     public class Datum
     {
-        public int tag ;
-        public int monat;
-        public int jahr;
+        public int day ;
+        public int month;
+        public int year;
 
         public int Day
         {
-            get { return tag; }
-            set { tag = value; }
+            get { return day; }
+            set { day = value; }
         }
 
         public int Month
         {
-            get { return monat; }
-            set { monat = value; }
+            get { return month; }
+            set { month = value; }
         }
 
         public int Year
         {
-            get { return jahr; }
-            set { jahr = value; }
+            get { return year; }
+            set { year = value; }
         }
 
         public string format;
