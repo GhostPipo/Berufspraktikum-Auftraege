@@ -2,7 +2,7 @@
 using IBANPruefer;
 
 
-/*
+
 string bbann = Calculations.CreateBban("23456", "200987439212");
 BigInteger.Parse(bbann);
 Console.WriteLine(bbann);
@@ -11,10 +11,9 @@ BigInteger.Parse(pruefnummer);
 Console.WriteLine(pruefnummer);
 string IBAN = Calculations.CreateIban("CH", pruefnummer, bbann);
 Console.WriteLine(IBAN);
-*/
 
-string country = Calculations.GetCountry("AT411100000237571500");
-string IsIbanValid = Calculations.ValidateIban("AT411100000237571500");
+string country = Calculations.GetCountry(null);
+string IsIbanValid = Calculations.ValidateIban(null);
 Console.WriteLine(IsIbanValid);
 
 

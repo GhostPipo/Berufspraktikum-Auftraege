@@ -283,6 +283,87 @@ namespace IBANprueferTest
         }
 
 
+        [TestMethod]
+        public void Ibanpruefer_getCountry_AreEqualNr1()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer1 = "CH3580808006438396881";
+            string ExpectedResult1 = "1217";
+
+
+            //act
+
+            string Countrydigit1 = Calculations.GetCountry(ibannummer1);
+
+            //assert
+            Assert.AreEqual(ExpectedResult1, Countrydigit1);
+
+        }
+
+        [TestMethod]
+        public void Ibanpruefer_getCountry_AreEqualNr2()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer2 = "AT3580808006438396881";
+            string ExpectedResult2 = "1029";
+
+
+            //act
+
+            string Countrydigit2 = Calculations.GetCountry(ibannummer2);
+
+            //assert
+            Assert.AreEqual(ExpectedResult2, Countrydigit2);
+
+        }
+
+        [TestMethod]
+        public void Ibanpruefer_getCountry_AreNotEqualNr1()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer3 = "CH3580808006438396881";
+            string ExpectedResult3 = "1314";
+
+
+            //act
+
+            string Countrydigit3 = Calculations.GetCountry(ibannummer3);
+
+            //assert
+            Assert.AreNotEqual(ExpectedResult3, Countrydigit3);
+
+        }
+
+        [TestMethod]
+        public void Ibanpruefer_getCountry_AreNotEqualNr2()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer4 = "AT3580808006438396881";
+            string ExpectedResult4 = "1314";
+
+
+            //act
+
+            string Countrydigit4 = Calculations.GetCountry(ibannummer4);
+
+            //assert
+            Assert.AreNotEqual(ExpectedResult4, Countrydigit4);
+
+        }
+
+
 
     }
 }
