@@ -68,7 +68,6 @@ namespace IBANPruefer
             string ibanrest = ibannummer.Substring(4);
             string pruefzahlen = $"{ibanrest}{ibandigits}";
             BigInteger x = BigInteger.Parse(pruefzahlen) % 97;
-            Console.WriteLine(x);
 
             if (x % 97 == 1)
             {

@@ -162,6 +162,126 @@ namespace IBANprueferTest
 
         }
 
+        [TestMethod]
+        public void Ibanpruefer_Ibanvalidator_AreEqualNr1()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer1 = "AT411100000237571500";
+            string ExpectedResult1 = "Die IBAN ist gültig.";
+
+
+            //act
+
+            string isIbanValid1 = Calculations.ValidateIban(ibannummer1);
+
+            //assert
+            Assert.AreEqual(ExpectedResult1, isIbanValid1);
+
+        }
+
+        [TestMethod]
+        public void Ibanpruefer_Ibanvalidator_AreEqualNr2()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer2 = "DE911000000001234567890";
+            string ExpectedResult2 = "Die IBAN ist ungültig";
+
+
+            //act
+
+            string isIbanValid2 = Calculations.ValidateIban(ibannummer2);
+
+            //assert
+            Assert.AreEqual(ExpectedResult2, isIbanValid2);
+
+        }
+
+        [TestMethod]
+        public void Ibanpruefer_Ibanvalidator_AreEqualNr3()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer3 = "CH3580808006438396881";
+            string ExpectedResult3 = "Die IBAN ist gültig.";
+
+
+            //act
+
+            string isIbanValid3 = Calculations.ValidateIban(ibannummer3);
+
+            //assert
+            Assert.AreEqual(ExpectedResult3, isIbanValid3);
+
+        }
+
+        [TestMethod]
+        public void Ibanpruefer_Ibanvalidator_AreNotEqualNr1()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer4 = "AT411100000237571500";
+            string ExpectedResult4 = "Die IBAN ist ungültig";
+
+
+            //act
+
+            string isIbanValid4 = Calculations.ValidateIban(ibannummer4);
+
+            //assert
+            Assert.AreNotEqual(ExpectedResult4, isIbanValid4);
+
+        }
+
+        [TestMethod]
+        public void Ibanpruefer_Ibanvalidator_AreNotEqualNr2()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer5 = "CH3580808006438396881";
+            string ExpectedResult5 = "Die IBAN ist ungültig";
+
+
+            //act
+
+            string isIbanValid5 = Calculations.ValidateIban(ibannummer5);
+
+            //assert
+            Assert.AreNotEqual(ExpectedResult5, isIbanValid5);
+
+        }
+
+        [TestMethod]
+        public void Ibanpruefer_Ibanvalidator_AreNotEqualNr3()
+        {
+            // AreEqual Validation
+
+            //arrange
+
+            string ibannummer6 = "DE911000000001234567890";
+            string ExpectedResult6 = "Die IBAN ist gültig.";
+
+
+            //act
+
+            string isIbanValid6 = Calculations.ValidateIban(ibannummer6);
+
+            //assert
+            Assert.AreNotEqual(ExpectedResult6, isIbanValid6);
+
+        }
+
 
 
     }
