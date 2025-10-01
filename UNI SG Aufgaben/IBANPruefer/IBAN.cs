@@ -8,7 +8,7 @@ namespace IBANPruefer
 {
         public class Iban
         {
-            private string bankleitnummer;
+            private string? bankleitnummer;
             private string kontonummer;
             private string laendercodezahl;
             private string laendercode;

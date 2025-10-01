@@ -11,7 +11,7 @@ namespace IBANPruefer
 {
     public class Calculations
     {
-        public static string CreateBban(string bankleitnummer, string kontonummer)
+        public static string CreateBBAN(string bankleitnummer, string kontonummer)
         {
             string bban = $"{bankleitnummer}{kontonummer}";
             return bban;
@@ -19,7 +19,7 @@ namespace IBANPruefer
 
         public static string CreatePruefzahl(string bankleitnummer, string kontonummer, string laendercodezahl)
         {
-            string bbannummer = Calculations.CreateBban(bankleitnummer, kontonummer);
+            string bbannummer = Calculations.CreateBBAN(bankleitnummer, kontonummer);
             string langezahl = $"{bbannummer}{laendercodezahl}";
             BigInteger pruefnummer = 98 - (BigInteger.Parse(langezahl) % 97);
             return pruefnummer.ToString();
@@ -181,7 +181,7 @@ namespace IBANPruefer
             }
             else
             {
-                return "Unültiger Wert der IBAN für die Überprüfung";
+                return "";
             }
         }
 
