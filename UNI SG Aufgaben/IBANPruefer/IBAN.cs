@@ -8,11 +8,14 @@ namespace IBANPruefer
 {
         public class Iban
         {
-            public string bankleitnummer;
-            public string kontonummer;
-            public string laendercodezahl;
-            public string laendercode;
-            public string pruefziffer;
+            private string bankleitnummer;
+            private string kontonummer;
+            private string laendercodezahl;
+            private string laendercode;
+            private string pruefziffer;
+            private string ibannummer;
+            private string countrydigits;
+            
 
         public string Bankleitnummer
         {
@@ -42,11 +45,27 @@ namespace IBANPruefer
         {
             get { return laendercode; }
         }
-        public Iban(string bankleitnummer, string kontonummer, string laendercodezahl, string pruefziffer, string laendercode)
+
+        public string Ibannummer
+        {
+            get { return ibannummer; }
+            set { ibannummer = value; }
+        }
+
+        public string Countrydigits
+        {
+            get { return countrydigits; }
+            set {  countrydigits = value; }
+        }
+
+        
+        public Iban(string bankleitnummer, string kontonummer, string laendercodezahl, string pruefziffer, string laendercode, string ibannummer, string countrydigits)
         {
             Pruefziffer = pruefziffer;
             Bankleitnummer = bankleitnummer;
             Kontonummer = kontonummer;
+            Ibannummer = ibannummer;
+           
 
         }
          
