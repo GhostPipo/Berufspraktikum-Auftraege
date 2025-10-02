@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+
+using System;
+using System.Drawing;
+using Console = Colorful.Console;
 
 namespace InheritanceCars
 {
@@ -15,31 +19,31 @@ namespace InheritanceCars
     // Basisklasse Car mit virtual Methode
     public abstract class Car
     {
-        public virtual void WhatAreYou() { Console.WriteLine("I am a Car"); }
+        public virtual void WhatAreYou() { Console.WriteLine("I am a Car", Color.Azure); }
     }
 
     // Golf erbt von GermanCar, virtual Methode möglich zu überschreiben
     public abstract class Golf : GermanCar
     {
-        public virtual void WhatAreYou() { Console.WriteLine("I am a Golf"); }
+        public virtual void WhatAreYou() { Console.WriteLine("I am a Golf", Color.Azure); }
     }
 
     // GolfGTI überschreibt die Methode von Golf
     public class GolfGTI : Golf, SportsCar
     {
-        public override void WhatAreYou() { Console.WriteLine("I am a Golf GTI"); }
+        public override void WhatAreYou() { Console.WriteLine("I am a Golf GTI", Color.Azure); }
     }
 
     // Manta versteckt die Methode von Opel mit new
     public class Manta : Opel, SportsCar
     {
-        public new void WhatAreYou() { Console.WriteLine("eeh du, echt cool"); }
+        public new void WhatAreYou() { Console.WriteLine("eeh du, echt cool", Color.Azure); }
     }
 
     // Opel überschreibt virtual Methode von Car
     public class Opel : Car, GermanCar
     {
-        public override void WhatAreYou() { Console.WriteLine("I am a Opel"); }
+        public override void WhatAreYou() { Console.WriteLine("I am a Opel", Color.Azure); }
     }
 
     class Program
@@ -83,3 +87,4 @@ namespace InheritanceCars
         }
     }
 }
+*/
