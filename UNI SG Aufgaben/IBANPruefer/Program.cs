@@ -1,16 +1,22 @@
 ﻿using System.Numerics;
 using IBANPruefer;
 
-string bbann = Calculations.CreateBBAN("23456", "200987439212");
-BigInteger.Parse(bbann);
-Console.WriteLine(bbann);
-string pruefnummer = Calculations.CreatePruefzahl("23456", "200987439212", "121700");
-BigInteger.Parse(pruefnummer);
-Console.WriteLine(pruefnummer);
-string IBAN = Calculations.CreateIban("CH", pruefnummer, bbann);
-Console.WriteLine(IBAN);
-string country = Calculations.GetCountry("CH4212345200297680912");
-string IsIbanValid = Calculations.ValidateIban("CH4212345200297680912");
-Console.WriteLine(IsIbanValid);
+Calculations BBAN = new Calculations();
+Calculations Proofnumber = new Calculations();
+Calculations IBAN = new Calculations();
+Calculations Country = new Calculations();
+Calculations IsValid = new Calculations();
+string expectedIBAN = "CH3580808006438396881";
+
+string countrycode = Country.GetCountry(expectedIBAN);
+string bban = BBAN.CreateBBAN("23456", "200987439212");
+Console.WriteLine(bban);
+string proofnumber = Proofnumber.CreatePruefzahl(bban, countrycode);
+Console.WriteLine(proofnumber);
+string iban = IBAN.CreateIban("CH", proofnumber, bban);
+string country = Country.GetCountry(iban);
+Console.WriteLine(country);
+string isValid = IsValid.ValidateIban(iban);
+Console.WriteLine(isValid);
 
 

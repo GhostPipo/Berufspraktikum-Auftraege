@@ -1,4 +1,5 @@
-﻿using IBANPruefer;
+﻿using System.Diagnostics.Metrics;
+using IBANPruefer;
 
 namespace IBANprueferTest
 {
@@ -12,20 +13,25 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string expectedResult1 = "CH951234010123049880";
+            Calculations BBAN = new Calculations();
+            Calculations Proofnumber = new Calculations();
+            Calculations IBAN = new Calculations();
+            Calculations Country = new Calculations();
+            Calculations IsValid = new Calculations();
+
+            string expectedResult1 = "CH9501234010123049880";
             string expectedResult2 = "Die IBAN ist gültig.";
             string banknumber = "01234";
             string acccountnumber = "010123049880";
+            string calcbban = BBAN.CreateBBAN(banknumber, acccountnumber);
             string countryletters = "CH";
-            string countrycode = Calculations.GetCountry(expectedResult1);
-            string proofsum = Calculations.CreatePruefzahl(banknumber, acccountnumber, countrycode);
-            
+            string countrycode = Country.GetCountry(expectedResult1);
+            string proofsum = Proofnumber.CreatePruefzahl(calcbban, countrycode);
 
             //act
-            string bban = Calculations.CreateBBAN(banknumber, acccountnumber);
-            string iban = Calculations.CreateIban(countryletters, proofsum, bban);
-            string isiban = Calculations.ValidateIban(expectedResult1);
-
+            string bban = BBAN.CreateBBAN(banknumber, acccountnumber);
+            string iban = IBAN.CreateIban(countryletters, proofsum, bban);
+            string isiban = IsValid.ValidateIban(expectedResult1);
 
             //assert
             Assert.AreEqual(expectedResult1, iban);
@@ -38,18 +44,25 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
+            Calculations BBAN = new Calculations();
+            Calculations Proofnumber = new Calculations();
+            Calculations IBAN = new Calculations();
+            Calculations Country = new Calculations();
+            Calculations IsValid = new Calculations();
+
             string expectedResult1 = "CH4212345200297680912";
             string expectedResult2 = "Die IBAN ist gültig.";
             string banknumber  = "12345";
             string acccountnumber = "200297680912";
+            string calcbban = BBAN.CreateBBAN(banknumber, acccountnumber);
             string countryletters  = "CH";
-            string countrycode = Calculations.GetCountry(expectedResult1);
-            string proofsum = Calculations.CreatePruefzahl(banknumber, acccountnumber, countrycode);
+            string countrycode = Country.GetCountry(expectedResult1);
+            string proofsum = Proofnumber.CreatePruefzahl(calcbban, countrycode);
 
             //act
-            string bban = Calculations.CreateBBAN(banknumber, acccountnumber);
-            string iban = Calculations.CreateIban(countryletters,proofsum, bban);
-            string isiban = Calculations.ValidateIban(expectedResult1);
+            string bban = BBAN.CreateBBAN(banknumber, acccountnumber);
+            string iban = IBAN.CreateIban(countryletters, proofsum, bban);
+            string isiban = IsValid.ValidateIban(expectedResult1);
 
             //assert
             Assert.AreEqual(expectedResult1, iban);
@@ -62,18 +75,25 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string expectedResult1 = "CH8023456200987439212";
+            Calculations BBAN = new Calculations();
+            Calculations Proofnumber = new Calculations();
+            Calculations IBAN = new Calculations();
+            Calculations Country = new Calculations();
+            Calculations IsValid = new Calculations();
+
+            string expectedResult1 = "CH4423456200987439212";
             string expectedResult2 = "Die IBAN ist gültig.";
             string banknumber  = "23456";
             string acccountnumber = "200987439212";
+            string calcbban = BBAN.CreateBBAN(banknumber, acccountnumber);
             string countryletters  = "CH";
-            string countrycode = Calculations.GetCountry(expectedResult1);
-            string proofsum  = Calculations.CreatePruefzahl(banknumber, acccountnumber, countrycode);
+            string countrycode = Country.GetCountry(expectedResult1);
+            string proofsum = Proofnumber.CreatePruefzahl(calcbban, countrycode);
 
             //act
-            string bban = Calculations.CreateBBAN(banknumber, acccountnumber);
-            string iban = Calculations.CreateIban(countryletters, proofsum, bban);
-            string isiban = Calculations.ValidateIban(expectedResult1);
+            string bban = BBAN.CreateBBAN(banknumber, acccountnumber);
+            string iban = IBAN.CreateIban(countryletters, proofsum, bban);
+            string isiban = IsValid.ValidateIban(expectedResult1);
 
             //assert
             Assert.AreEqual(expectedResult1, iban);
@@ -86,20 +106,25 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
+            Calculations BBAN = new Calculations();
+            Calculations Proofnumber = new Calculations();
+            Calculations IBAN = new Calculations();
+            Calculations Country = new Calculations();
+
             string expectedResult = "CH1923489509223845902";
             string banknumber = "01234";
             string acccountnumber = "010123049880";
-            string countrycode = Calculations.GetCountry(expectedResult);
+            string calcbban = BBAN.CreateBBAN(banknumber, acccountnumber);
             string countryletters = "CH";
-            string proofsum = Calculations.CreatePruefzahl(banknumber, acccountnumber, countrycode);
+            string countrycode = Country.GetCountry(expectedResult);
+            string proofsum = Proofnumber.CreatePruefzahl(calcbban, countrycode);
 
             //act
-            string bban = Calculations.CreateBBAN(banknumber, acccountnumber);
-            string iban = Calculations.CreateIban(countryletters, proofsum, bban);
+            string bban =BBAN.CreateBBAN(banknumber, acccountnumber);
+            string iban = IBAN.CreateIban(countryletters, proofsum, bban);
 
             //assert
             Assert.AreNotEqual(expectedResult, iban);
-
         }
 
         [TestMethod]
@@ -108,20 +133,25 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
+            Calculations BBAN = new Calculations();
+            Calculations Proofnumber = new Calculations();
+            Calculations IBAN = new Calculations();
+            Calculations Country = new Calculations();
+
             string expectedResult = "CH9511223344556688779";
             string banknumber = "01234";
             string acccountnumber = "010123049880";
+            string calcbban = BBAN.CreateBBAN(banknumber, acccountnumber);
             string countryletters = "CH";
-            string countrycode = Calculations.GetCountry(expectedResult);
-            string proofsum = Calculations.CreatePruefzahl(banknumber, acccountnumber, countrycode);
+            string countrycode = Country.GetCountry(expectedResult);
+            string proofsum = Proofnumber.CreatePruefzahl(calcbban, countrycode);
 
             //act
-            string bban = Calculations.CreateBBAN(banknumber, acccountnumber);
-            string iban = Calculations.CreateIban(countryletters, proofsum, bban);
+            string bban = BBAN.CreateBBAN(banknumber, acccountnumber);
+            string iban = IBAN.CreateIban(countryletters, proofsum, bban);
 
             //assert
             Assert.AreNotEqual(expectedResult, iban);
-
         }
 
         [TestMethod]
@@ -130,23 +160,28 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
+            Calculations BBAN = new Calculations();
+            Calculations Proofnumber = new Calculations();
+            Calculations IBAN = new Calculations();
+            Calculations Country = new Calculations();
+
             string expectedResult = "CH9520293847561029387";
             string banknumber = "01234";
             string acccountnumber = "010123049880";
+            string calcbban = BBAN.CreateBBAN(banknumber, acccountnumber);
             string countryletters = "CH";
-            string countrycode = Calculations.GetCountry(expectedResult);
-            string proofsum = Calculations.CreatePruefzahl(banknumber, acccountnumber, countrycode);
+            string countrycode = Country.GetCountry(expectedResult);
+            string proofsum = Proofnumber.CreatePruefzahl(calcbban, countrycode);
 
             //act
-            string bban = Calculations.CreateBBAN(banknumber, acccountnumber);
-            string iban = Calculations.CreateIban(countryletters, proofsum, bban);
+            string bban = BBAN.CreateBBAN(banknumber, acccountnumber);
+            string iban = IBAN.CreateIban(countryletters, proofsum, bban);
 
             //assert
             Assert.AreNotEqual(expectedResult, iban);
-
         }
 
-
+        //IbanValidator
 
         [TestMethod]
         public void Ibanpruefer_Ibanvalidator_AreEqualNr1()
@@ -154,16 +189,16 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
+            Calculations IsValid = new Calculations();
+
             string ibannummer = "AT411100000237571500";
             string expectedResult = "Die IBAN ist gültig.";
 
-
             //act
-            string isIbanValid = Calculations.ValidateIban(ibannummer);
+            string isIbanValid = IsValid.ValidateIban(ibannummer);
 
             //assert
             Assert.AreEqual(expectedResult, isIbanValid);
-
         }
 
         [TestMethod]
@@ -172,16 +207,16 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string ibannummer2 = "DE911000000001234567890";
-            string ExpectedResult2 = "Die IBAN ist ungültig";
+            Calculations IsValid = new Calculations();
 
+            string ibannummer  = "DE911000000001234567890";
+            string expectedResult  = "Die IBAN ist ungültig";
 
             //act
-            string isIbanValid2 = Calculations.ValidateIban(ibannummer2);
+            string isIbanValid  = IsValid.ValidateIban(ibannummer);
 
             //assert
-            Assert.AreEqual(ExpectedResult2, isIbanValid2);
-
+            Assert.AreEqual(expectedResult , isIbanValid);
         }
 
         [TestMethod]
@@ -190,16 +225,16 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string ibannummer3 = "CH3580808006438396881";
-            string ExpectedResult3 = "Die IBAN ist gültig.";
+            Calculations IsValid = new Calculations();
 
+            string ibannummer = "CH3580808006438396881";
+            string expectedResult = "Die IBAN ist gültig.";
 
             //act
-            string isIbanValid3 = Calculations.ValidateIban(ibannummer3);
+            string isIbanValid = IsValid.ValidateIban(ibannummer);
 
             //assert
-            Assert.AreEqual(ExpectedResult3, isIbanValid3);
-
+            Assert.AreEqual(expectedResult, isIbanValid);
         }
 
         [TestMethod]
@@ -208,16 +243,16 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string ibannummer4 = "AT411100000237571500";
-            string ExpectedResult4 = "Die IBAN ist ungültig";
+            Calculations IsValid = new Calculations();
 
+            string ibannummer = "AT411100000237571500";
+            string expectedResult = "Die IBAN ist ungültig";
 
             //act
-            string isIbanValid4 = Calculations.ValidateIban(ibannummer4);
+            string isIbanValid = IsValid.ValidateIban(ibannummer);
 
             //assert
-            Assert.AreNotEqual(ExpectedResult4, isIbanValid4);
-
+            Assert.AreNotEqual(expectedResult, isIbanValid);
         }
 
         [TestMethod]
@@ -226,16 +261,17 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string ibannummer5 = "CH3580808006438396881";
-            string ExpectedResult5 = "Die IBAN ist ungültig";
+            Calculations IsValid = new Calculations();
+
+            string ibannummer = "CH3580808006438396881";
+            string expectedResult = "Die IBAN ist ungültig";
 
 
             //act
-            string isIbanValid5 = Calculations.ValidateIban(ibannummer5);
+            string isIbanValid = IsValid.ValidateIban(ibannummer);
 
             //assert
-            Assert.AreNotEqual(ExpectedResult5, isIbanValid5);
-
+            Assert.AreNotEqual(expectedResult, isIbanValid);
         }
 
         [TestMethod]
@@ -244,18 +280,18 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string ibannummer6 = "DE911000000001234567890";
-            string ExpectedResult6 = "Die IBAN ist gültig.";
+            Calculations IsValid = new Calculations();
+
+            string ibannummer = "DE911000000001234567890";
+            string expectedResult = "Die IBAN ist gültig.";
 
 
             //act
-            string isIbanValid6 = Calculations.ValidateIban(ibannummer6);
+            string isIbanValid = IsValid.ValidateIban(ibannummer);
 
             //assert
-            Assert.AreNotEqual(ExpectedResult6, isIbanValid6);
-
+            Assert.AreNotEqual(expectedResult, isIbanValid);
         }
-
 
         [TestMethod]
         public void Ibanpruefer_getCountry_AreEqualNr1()
@@ -263,16 +299,16 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string ibannummer1 = "CH3580808006438396881";
-            string ExpectedResult1 = "1217";
+            Calculations Country = new Calculations();
 
+            string ibannummer = "CH3580808006438396881";
+            string expectedResult = "1217";
 
             //act
-            string Countrydigit1 = Calculations.GetCountry(ibannummer1);
+            string countrydigit = Country.GetCountry(ibannummer);
 
             //assert
-            Assert.AreEqual(ExpectedResult1, Countrydigit1);
-
+            Assert.AreEqual(expectedResult, countrydigit);
         }
 
         [TestMethod]
@@ -281,16 +317,16 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string ibannummer2 = "AT3580808006438396881";
-            string ExpectedResult2 = "1029";
+            Calculations Country = new Calculations();
 
+            string ibannummer = "AT3580808006438396881";
+            string expectedResult = "1029";
 
             //act
-            string Countrydigit2 = Calculations.GetCountry(ibannummer2);
+            string countrydigit = Country.GetCountry(ibannummer);
 
             //assert
-            Assert.AreEqual(ExpectedResult2, Countrydigit2);
-
+            Assert.AreEqual(expectedResult, countrydigit);
         }
 
         [TestMethod]
@@ -299,16 +335,17 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string ibannummer3 = "CH3580808006438396881";
-            string ExpectedResult3 = "1314";
+            Calculations Country = new Calculations();
+
+            string ibannummer = "CH3580808006438396881";
+            string expectedResult = "1314";
 
 
             //act
-            string Countrydigit3 = Calculations.GetCountry(ibannummer3);
+            string countrydigit = Country.GetCountry(ibannummer);
 
             //assert
-            Assert.AreNotEqual(ExpectedResult3, Countrydigit3);
-
+            Assert.AreNotEqual(expectedResult, countrydigit);
         }
 
         [TestMethod]
@@ -317,19 +354,17 @@ namespace IBANprueferTest
             // AreEqual Validation
 
             //arrange
-            string ibannummer4 = "AT3580808006438396881";
-            string ExpectedResult4 = "1314";
+            Calculations Country = new Calculations();
+
+            string ibannummer = "AT3580808006438396881";
+            string expectedResult = "1314";
 
 
             //act
-            string Countrydigit4 = Calculations.GetCountry(ibannummer4);
+            string countrydigit = Country.GetCountry(ibannummer);
 
             //assert
-            Assert.AreNotEqual(ExpectedResult4, Countrydigit4);
-
+            Assert.AreNotEqual(expectedResult, countrydigit);
         }
-
-
-
     }
 }
