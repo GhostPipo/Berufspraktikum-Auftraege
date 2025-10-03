@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBANprueferTest", "IBANprue
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vererbung", "Vererbung\Vererbung.csproj", "{61D9CFCF-B06F-4351-A9C3-9FF8B69D3D29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary", "Dictionary\Dictionary.csproj", "{9297FAE3-61FC-4262-B7B6-1388F6243B1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{61D9CFCF-B06F-4351-A9C3-9FF8B69D3D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61D9CFCF-B06F-4351-A9C3-9FF8B69D3D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61D9CFCF-B06F-4351-A9C3-9FF8B69D3D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9297FAE3-61FC-4262-B7B6-1388F6243B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9297FAE3-61FC-4262-B7B6-1388F6243B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9297FAE3-61FC-4262-B7B6-1388F6243B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9297FAE3-61FC-4262-B7B6-1388F6243B1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
