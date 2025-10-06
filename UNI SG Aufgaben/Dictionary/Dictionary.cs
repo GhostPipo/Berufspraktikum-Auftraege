@@ -8,7 +8,7 @@
             Dictionary<string, List<string>> dictnew = new Dictionary<string, List<string>>();
             dict["Döner"] = new List<string> { "Brot", "Salat", "Fleisch", "Zwiebel" };
             dict["Pizza"] = new List<string> { "Teig", "Fleisch", "Käse", "Sosse" };
-            dict["Lasagne"] = new List<string> { "Sosse", "Teig", "Fleisch", "Zwiebel" };
+            dict["Lasagne"] = new List<string> { "Sosse", "Teig", "Fleisch", "zwiebel" };
             dict["Brot"] = new List<string> { "Teig", "Salz", "Milch" };
             foreach (var part in dict)
             {
@@ -21,7 +21,7 @@
                     dictnew[val.ToUpper()].Add(part.Key);
                 }
             }
-                return dictnew;
+            return dictnew;
         }
     }
 }
