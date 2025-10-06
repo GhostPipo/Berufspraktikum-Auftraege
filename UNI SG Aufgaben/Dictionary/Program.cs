@@ -1,15 +1,15 @@
-﻿using System.Runtime.InteropServices;
-using Dictionary;
-
-namespace Dictionary
+﻿namespace Dictionari
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Dictionary obj1 = new Dictionary();
+            Dictionaries obj1 = new Dictionaries();
             Dictionary<string, List<string>> dictnew = obj1.CreateDictionary();
-            obj1.PrintNewDictionary(dictnew);
+            foreach (var i in dictnew)
+            {
+                Console.WriteLine($"KEY: {i.Key}; VALUE: {string.Join(", ", i.Value)}");
+            }   
         }
     }
 }

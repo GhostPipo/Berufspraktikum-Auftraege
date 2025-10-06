@@ -1,7 +1,4 @@
-﻿/*
-
-using System;
-using System.Drawing;
+﻿using System.Drawing;
 using Console = Colorful.Console;
 
 namespace InheritanceCars
@@ -87,4 +84,3 @@ namespace InheritanceCars
         }
     }
 }
-*/
