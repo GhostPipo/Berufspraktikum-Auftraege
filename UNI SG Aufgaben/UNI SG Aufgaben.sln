@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UML", "UML\UML.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMLTest", "UMLTest\UMLTest.csproj", "{EB6B0936-1A96-4751-BDD3-873A4B054978}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subarray", "Subarray\Subarray.csproj", "{B7F1A547-C727-41AC-A1C5-ED0BE72FFC21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{EB6B0936-1A96-4751-BDD3-873A4B054978}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB6B0936-1A96-4751-BDD3-873A4B054978}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB6B0936-1A96-4751-BDD3-873A4B054978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F1A547-C727-41AC-A1C5-ED0BE72FFC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F1A547-C727-41AC-A1C5-ED0BE72FFC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F1A547-C727-41AC-A1C5-ED0BE72FFC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F1A547-C727-41AC-A1C5-ED0BE72FFC21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

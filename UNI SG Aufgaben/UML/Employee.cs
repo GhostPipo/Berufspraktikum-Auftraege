@@ -6,17 +6,11 @@
         private int salary;
         public string Name { get { return name; }  set { name = value;} }
         public int Salary { get { return salary; } set { salary = value; } }
-        public int getMonatslohn()
-        {
-            this.Salary = salary;
-            return this.salary;
-        }
         public Employee(string name, int salary)
         {
             Name = name;
             Salary = salary;
         }
-
         public Employee() { }
     }
 }

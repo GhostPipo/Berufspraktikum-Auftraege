@@ -9,7 +9,7 @@ namespace UML
         {
             return bonus;
         }
-        public int getGehalt()
+        public int getManagerSalary()
         {
             int gehalt = Salary + Bonus;
             return gehalt;
@@ -19,11 +19,9 @@ namespace UML
             Name = name;
             Bonus = bonus;
             Salary = salary;
-
         }
         public Manager()
         {
-            
         }
     }
 }
