@@ -8,16 +8,15 @@
         public int Salary { get { return salary; } set { salary = value; } }
         public int getMonatslohn()
         {
-            return salary;
+            this.Salary = salary;
+            return this.salary;
         }
         public Employee(string name, int salary)
         {
             Name = name;
             Salary = salary;
         }
-        public Employee()
-        {
-        
-        }
+
+        public Employee() { }
     }
 }

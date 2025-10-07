@@ -2,13 +2,26 @@
 {
     public class Departement
     {
-        private List<Employee> employeelist = new List<Employee>
-        { new Employee("Philipp", 4500), new Employee("Nathan", 271000), new Employee("Razar", 899)};
+        private List<Employee> employeelist = new List<Employee>();
         public List<Employee> Employeelist { get { return employeelist; } set { employeelist = value;} }
-        public int getWageExpenses()
+        public int getWageExpenses(int man)
         {
+            Manager manager = new Manager();
             int sum = employeelist.Sum(employeelist => employeelist.Salary);
-            return sum;
+            return sum + man;
+        }
+        public Employee GetEmployeelist(string name, int salary)
+        {
+            var employee = new Employee(name, salary);
+            employeelist.Add(new Employee(name, salary));
+            return employee;
+        }
+        public Departement(List<Employee> employeelist)
+        {
+            Employeelist = employeelist;
+        }
+        public Departement()
+        {
         }
     }
 }

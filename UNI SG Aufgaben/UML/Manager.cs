@@ -1,4 +1,5 @@
-﻿namespace UML
+﻿using UML;
+namespace UML
 {
     public class Manager : Employee
     {
@@ -8,15 +9,21 @@
         {
             return bonus;
         }
-        public int getGehalt(int bonus)
+        public int getGehalt()
         {
             int gehalt = Salary + Bonus;
             return gehalt;
         }
-        public Manager(string name)
+        public Manager(string name, int bonus, int salary)
         {
             Name = name;
             Bonus = bonus;
+            Salary = salary;
+
+        }
+        public Manager()
+        {
+            
         }
     }
 }
