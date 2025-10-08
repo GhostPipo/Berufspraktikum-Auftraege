@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using IBANPruefer;
-
+﻿using System.Numerics;
 namespace IBANPruefer
 {
     public class Calculations
@@ -30,14 +22,12 @@ namespace IBANPruefer
         }
         public string GetCountry(string ibannummer)
         {
-            int ibanlength = ibannummer.Length;
-            if (ibannummer != null && ibannummer != "" && ibanlength >1)
+            if (string.IsNullOrWhiteSpace(ibannummer) && ibannummer.Length > 1)
             {
                 string result = string.Empty;
                 char countrychar1 = ibannummer[0];
                 char countrychar2 = ibannummer[1];
                 string[] letters = [countrychar1.ToString(), countrychar2.ToString()];
-                string countryletters = ($"{countrychar1}{countrychar2}").ToString();
                 int i = 0;
 
                 foreach (string letter in letters)
@@ -79,7 +69,7 @@ namespace IBANPruefer
                 return string.Empty;
             }
         }
-        public string ValidateIban(string ibannummer)
+        public bool ValidateIban(string ibannummer)
         {
             if (ibannummer != null && ibannummer != "") //Logik um zu checken ob die Iban null oder leer ist
             {
@@ -93,16 +83,16 @@ namespace IBANPruefer
 
                 if (x % 97 == 1)
                 {
-                    return "Die IBAN ist gültig.";
+                    return true;
                 }
                 else
                 {
-                    return "Die IBAN ist ungültig";
+                    return false;
                 }
             }
             else
             {
-                return "Ungültiger Wert der IBAN";
+                return false;
             }
         }
     }

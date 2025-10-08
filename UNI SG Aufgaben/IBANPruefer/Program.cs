@@ -16,7 +16,7 @@ Console.WriteLine(proofnumber);
 string iban = IBAN.CreateIban("CH", proofnumber, bban);
 string country = Country.GetCountry(iban);
 Console.WriteLine(country);
-string isValid = IsValid.ValidateIban(iban);
+bool isValid = IsValid.ValidateIban(iban);
 Console.WriteLine(isValid);
 
 

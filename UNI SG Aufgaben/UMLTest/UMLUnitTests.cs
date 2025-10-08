@@ -11,12 +11,11 @@ namespace UMLTest
             Departement departement = new Departement();
             var salaryFlip = departement.GetEmployeeinlist("Philipp", 3254);
             var salaryHubert = departement.GetEmployeeinlist("Hubert", 1834);
-            var salary = (salaryFlip + salaryHubert) / 2;
-            Manager manager = new Manager("Jörn Stein", 2000, salary);
-            var man = manager.getManagerSalary();
+            Manager manager = new Manager(2000);
+            var man = manager.GetManagerSalary();
             int expectedResult = 9632;
             //act
-            int wageexpenses = departement.getWageExpenses(man);
+            int wageexpenses = departement.getWageExpenses();
             //assert
             Assert.AreEqual(expectedResult, wageexpenses);
         }
@@ -27,11 +26,11 @@ namespace UMLTest
             Departement departement = new Departement();
             var employer = departement.GetEmployeeinlist("Philipp", 3254);
             var salary = departement.GetEmployeeinlist("Hubert", 1834);
-            Manager manager = new Manager("Jörn Stein", 2000, salary);
-            var man = manager.getManagerSalary();
+            Manager manager = new Manager(2000);
+            var man = manager.GetManagerSalary();
             int expectedResult = 67;
             //act
-            int wageexpenses = departement.getWageExpenses(man);
+            int wageexpenses = departement.getWageExpenses();
             //assert
             Assert.AreNotEqual(expectedResult, wageexpenses);
         }
@@ -40,28 +39,27 @@ namespace UMLTest
         {
             //arrange
             Departement departement = new Departement();
-            int expectedResultFlip = 3254;
-            int expectedResultHubert = 1834;
+            int expectedResult = 3254 + 1834;
+            int salary = departement.GetSalaryEmployees();
             //act
-            var salaryFlip = departement.GetEmployeeinlist("Philipp", 3254);
-            var salaryHubert = departement.GetEmployeeinlist("Hubert", 1834);
+            var Flip = departement.GetEmployeeinlist("Philipp", 3254);
+            var  Hubert = departement.GetEmployeeinlist("Hubert", 1834);
+
             //assert
-            Assert.AreEqual(expectedResultFlip, salaryFlip);
-            Assert.AreEqual(expectedResultHubert, salaryHubert);
+            Assert.AreEqual(expectedResult, salary);
         }
         [TestMethod]
         public void UML_GetSalary_Test_AreNotEqual_Nr1()
         {
             //arrange
             Departement departement = new Departement();
-            int expectedResultFlip = 1889;
-            int expectedResultHubert = 20489;
+            int expectedResult = 1889 + 20489; 
             //act
-            var salaryFlip = departement.GetEmployeeinlist("Philipp", 3254);
-            var salaryHubert = departement.GetEmployeeinlist("Hubert", 1834);
+            var Flip = departement.GetEmployeeinlist("Philipp", 3254);
+            var Hubert = departement.GetEmployeeinlist("Hubert", 1834);
+            int salary = departement.GetSalaryEmployees();
             //assert
-            Assert.AreNotEqual(expectedResultFlip, salaryFlip);
-            Assert.AreNotEqual(expectedResultHubert, salaryHubert);
+            Assert.AreNotEqual(expectedResult, salary);
         }
         [TestMethod]
         public void UML_GetManagerSalary_Test_AreEqual_Nr1()
@@ -69,10 +67,10 @@ namespace UMLTest
             //arrange
             Departement departement = new Departement();
             var salaryFlip = departement.GetEmployeeinlist("Philipp", 3254);
-            Manager manager = new Manager("Jörn Stein", 2000, salaryFlip);
+            Manager manager = new Manager(2000);
             int expectedResult = 5254;
             //act
-            var man = manager.getManagerSalary();
+            var man = manager.GetManagerSalary();
             //assert
             Assert.AreEqual(expectedResult, man);
         }
@@ -82,10 +80,10 @@ namespace UMLTest
             //arrange
             Departement departement = new Departement();
             var salaryFlip = departement.GetEmployeeinlist("Philipp", 3254);
-            Manager manager = new Manager("Jörn Stein", 2000, salaryFlip);
+            Manager manager = new Manager(2000);
             int expectedResult = 5255;
             //act
-            var man = manager.getManagerSalary();
+            var man = manager.GetManagerSalary();
             //assert
             Assert.AreNotEqual(expectedResult, man);
         }
@@ -95,10 +93,10 @@ namespace UMLTest
             //arrange
             Departement departement = new Departement();
             var salaryFlip = departement.GetEmployeeinlist("Philipp", 3254);
-            Manager manager = new Manager("Jörn Stein", 2000, salaryFlip);
+            Manager manager = new Manager(2000);
             int expectedResult = 2000;
             //act
-            var bonus = manager.getBonus();
+            var bonus = manager.GetBonus();
             //assert
             Assert.AreEqual(expectedResult, bonus);
         }
@@ -108,34 +106,12 @@ namespace UMLTest
             //arrange
             Departement departement = new Departement();
             var salaryFlip = departement.GetEmployeeinlist("Philipp", 3254);
-            Manager manager = new Manager("Jörn Stein", 2005, salaryFlip);
+            Manager manager = new Manager(2005);
             int expectedResult = 2000;
             //act
-            var bonus = manager.getBonus();
+            var bonus = manager.GetBonus();
             //assert
             Assert.AreNotEqual(expectedResult, bonus);
-        }
-        [TestMethod]
-        public void UML_GetEmployeeInList_Test_AreEqual_Nr1()
-        {
-            //arrange
-            Departement departement = new Departement();
-            var expectedResult = 3254;
-            //act
-            var flip = departement.GetEmployeeinlist("Philipp", 3254);
-            //assert
-            Assert.AreEqual(expectedResult, flip);
-        }
-        [TestMethod]
-        public void UML_GetEmployeeInList_Test_AreNotEqual_Nr1()
-        {
-            //arrange
-            Departement departement = new Departement();
-            var expectedResult = 3255;
-            //act
-            var flip = departement.GetEmployeeinlist("Philipp", 3254);
-            //assert
-            Assert.AreNotEqual(expectedResult, flip);
         }
     }
 }

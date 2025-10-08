@@ -3,25 +3,30 @@ namespace UML
 {
     public class Manager : Employee
     {
+        private Departement departement;
         private int bonus;
         public int Bonus { get { return bonus; } set { bonus = value; } }
-        public int getBonus()
+        public int GetBonus()
         {
             return bonus;
         }
-        public int getManagerSalary()
+        public int GetManagerSalary()
         {
-            int gehalt = Salary + Bonus;
+            int gehalt = departement.GetSalaryEmployees() + Bonus;
             return gehalt;
         }
-        public Manager(string name, int bonus, int salary)
+        public Manager(int bonus)
         {
-            Name = name;
             Bonus = bonus;
-            Salary = salary;
         }
-        public Manager()
+        public void SetDepartment(Departement departement)
         {
+            this.departement = departement;
         }
+        public Manager(Departement departement)
+        {
+            this.departement = departement;
+        }
+        public Manager() { }
     }
 }
