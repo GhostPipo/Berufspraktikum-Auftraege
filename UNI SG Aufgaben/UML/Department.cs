@@ -32,6 +32,15 @@ namespace UML
         {
             this.manager = manager;
         }
+        public List<string> GetEmployeesfromList(List<string> employees)
+        {
+            int i;
+            for (i = 0; i < employeelist.Count(); i++)
+            {
+                employees.Add($"Employee: {employeelist[i].Name}; Salary: {employeelist[i].Salary}");
+            }
+            return employees;
+        }
         public Departement(Manager manager)
         {
             this.manager = manager;

@@ -1,15 +1,25 @@
 ﻿using System.Collections.Generic;
 using UML;
-
+//arrange
 Manager manager = new Manager(2000);
 Departement departement = new Departement(manager);
-var Hubert = departement.GetEmployeeinlist("Hubert", 3000);
-var Flip = departement.GetEmployeeinlist("Philipp", 5000);
-var salaries = departement.GetSalaryEmployees();
+List<string> employees = new List<string>();
+List<string> employee = departement.GetEmployeesfromList(employees);
+//act
+departement.GetEmployeeinlist("Hubert", 3000);
+departement.GetEmployeeinlist("Philipp", 5000);
+departement.GetSalaryEmployees();
 departement.SetManager(manager);
 manager.SetDepartment(departement);
 var bonus = manager.GetBonus();
-var manSalary = manager.GetManagerSalary();
-var Jörn = departement.GetEmployeeinlist("Jörn", manSalary);
+var managerSalary = manager.GetManagerSalary();
+departement.GetEmployeeinlist("Jörn", managerSalary);
 var wageExpenses = departement.getWageExpenses();
-Console.WriteLine($"Die Mitarbeiter verdienen insgesamt {wageExpenses} CHF und der Manager verdient {manSalary} CHF. Dabei ist ein Bonus von {bonus} CHF inkludiert. Die Lohnkosten belaufen sich auf {wageExpenses} CHF");
+//assert
+foreach (var e in employee)
+{
+    Console.WriteLine(e);
+}
+Console.WriteLine($"der Manager verdient {managerSalary} CHF." +
+                  $"Dabei ist ein Bonus von {bonus} CHF inkludiert." +
+                  $"Die Lohnkosten belaufen sich auf {wageExpenses} CHF");

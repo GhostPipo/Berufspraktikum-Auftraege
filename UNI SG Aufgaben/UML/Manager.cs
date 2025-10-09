@@ -23,10 +23,6 @@ namespace UML
         {
             this.departement = departement;
         }
-        public Manager(Departement departement)
-        {
-            this.departement = departement;
-        }
         public Manager() { }
     }
 }
